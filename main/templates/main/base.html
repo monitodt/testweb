@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm ">
+        <h5 class="my-0 my-sm-0 ">Страховка онлайн</h5>
+        <nav class="my-0 my-sm-0 ">
+            <a class="p-2 text-dark" href="{% url 'home' %}">Главная</a>
+            <a class="p-2 text-dark" href="{% url 'polis' %}">Оформить страховой полис</a>
+            <a class="p-2 text-dark" href="{% url 'help' %}">Помогите</a>
+            <a class="p-2 text-dark" href="{% url 'create' %}">Cоздать объявление</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>
